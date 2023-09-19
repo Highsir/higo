@@ -1,4 +1,4 @@
-package main
+package chapter4
 
 import (
 	"fmt"
@@ -7,17 +7,17 @@ import (
 type binaryCalcFunc func(int, int) int
 
 func main() {
-	var i interface{} = binaryCalcFunc(func(x, y int) int {return x + y})
-	c := make(chan func(int, int) int ,10)
+	var i interface{} = binaryCalcFunc(func(x, y int) int { return x + y })
+	c := make(chan func(int, int) int, 10)
 	fns := []binaryCalcFunc{
-		func(x, y int) int {return x + y},
-		func(x, y int) int {return x - y},
-		func(x, y int) int {return x * y},
-		func(x, y int) int {return x / y},
-		func(x, y int) int {return x % y},
+		func(x, y int) int { return x + y },
+		func(x, y int) int { return x - y },
+		func(x, y int) int { return x * y },
+		func(x, y int) int { return x / y },
+		func(x, y int) int { return x % y },
 	}
 
-	c <- func(x, y int) int {return x * y}
+	c <- func(x, y int) int { return x * y }
 
 	fmt.Println(fns[0](5, 6))
 	f := <-c

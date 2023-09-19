@@ -1,7 +1,6 @@
-package main
+package chapter4
 
-
-type T struct { a int }
+type T struct{ a int }
 
 func (t T) M1() {
 	t.a = 10

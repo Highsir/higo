@@ -1,5 +1,4 @@
-package main
-
+package chapter4
 
 import "fmt"
 
@@ -9,4 +8,3 @@ func init() {
 
 func main() {
 }
-

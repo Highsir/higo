@@ -1,26 +1,26 @@
-package main
+package chapter4
 
 import (
 	"fmt"
 )
 
-func foo1(){
-	for i := 0; i<=3; i++ {
+func foo1() {
+	for i := 0; i <= 3; i++ {
 		defer fmt.Println(i)
 	}
 }
 
-func foo2(){
-	for i:=0; i<=3; i++ {
+func foo2() {
+	for i := 0; i <= 3; i++ {
 		defer func(n int) {
 			fmt.Println(n)
 		}(i)
 	}
 }
 
-func foo3(){
+func foo3() {
 	for i := 0; i <= 3; i++ {
-		defer func(){
+		defer func() {
 			fmt.Println(i)
 		}()
 	}

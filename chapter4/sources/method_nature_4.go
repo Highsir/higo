@@ -1,4 +1,4 @@
-package main
+package chapter4
 
 import (
 	"fmt"
@@ -14,13 +14,13 @@ func (p field) print() {
 }
 
 func main() {
-	data1  := []*field{{"one"},{"two"},{"three"}}
-	for _, v := range data1{
+	data1 := []*field{{"one"}, {"two"}, {"three"}}
+	for _, v := range data1 {
 		go (*field).print(v)
 	}
 
 	data2 := []field{{"four"}, {"five"}, {"six"}}
-	for _, v := range data2{
+	for _, v := range data2 {
 		go (*field).print(&v)
 	}
 	time.Sleep(3 * time.Second)

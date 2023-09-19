@@ -1,6 +1,6 @@
-package main
+package chapter4
 
-import(
+import (
 	"fmt"
 )
 
@@ -14,7 +14,7 @@ type intSliceFunctorImpl struct {
 
 func (isf intSliceFunctorImpl) Fmap(fn func(int) int) IntSliceFunctor {
 	newInts := make([]int, len(isf.ints))
-	for i,elt := range isf.ints {
+	for i, elt := range isf.ints {
 		retInt := fn(elt)
 		newInts[i] = retInt
 	}
@@ -26,11 +26,11 @@ func NewIntSliceFunctor(slice []int) IntSliceFunctor {
 }
 
 func main() {
-	intSlice := []int{1,2,3,4}
+	intSlice := []int{1, 2, 3, 4}
 	fmt.Printf("init a functor from int slice: %#v\n", intSlice)
 	f := NewIntSliceFunctor(intSlice)
 	fmt.Printf("original functor: %+v\n", f)
-	
+
 	mapperFunc1 := func(i int) int {
 		return i + 10
 	}
@@ -43,7 +43,7 @@ func main() {
 	}
 
 	mapped2 := mapped1.Fmap(mapperFunc2)
-    fmt.Printf("mapped functor2: %+v\n", mapped2)
-    fmt.Printf("original functor: %+v\n", f) // 原函子没有改变
-    fmt.Printf("composite functor: %+v\n", f.Fmap(mapperFunc1).Fmap(mapperFunc2))
+	fmt.Printf("mapped functor2: %+v\n", mapped2)
+	fmt.Printf("original functor: %+v\n", f) // 原函子没有改变
+	fmt.Printf("composite functor: %+v\n", f.Fmap(mapperFunc1).Fmap(mapperFunc2))
 }

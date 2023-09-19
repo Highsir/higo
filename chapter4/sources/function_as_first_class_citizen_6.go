@@ -1,16 +1,15 @@
-package main
+package chapter4
 
 import "fmt"
 
 func factorial(n int) int {
-	if n==1{
+	if n == 1 {
 		return 1
-	}else{
+	} else {
 		return n * factorial(n-1)
 	}
 
 }
-
 
 func main() {
 	fmt.Printf("%d\n", factorial(5))

@@ -1,4 +1,4 @@
-package main
+package chapter4
 
 import (
 	"fmt"
@@ -14,7 +14,7 @@ func (p *field) print() {
 }
 
 func main() {
-	data1 := []*field{{"one"},{"two"},{"three"}}
+	data1 := []*field{{"one"}, {"two"}, {"three"}}
 	for _, v := range data1 {
 		go v.print()
 	}

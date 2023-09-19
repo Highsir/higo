@@ -1,4 +1,4 @@
-package main
+package chapter4
 
 import "fmt"
 
@@ -18,5 +18,5 @@ func MyAdd(x, y int) int {
 
 func main() {
 	var i BinaryAdder = MyAddFunc(MyAdd)
-	fmt.Println(i.Add(5,6))
+	fmt.Println(i.Add(5, 6))
 }

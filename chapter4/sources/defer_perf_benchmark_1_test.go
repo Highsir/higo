@@ -1,10 +1,10 @@
-package defer_test
+package chapter4_test
 
 import "testing"
 
 func sum(max int) int {
 	total := 0
-	for i:=0; i<max;i++ {
+	for i := 0; i < max; i++ {
 		total += i
 	}
 	return total
@@ -21,13 +21,13 @@ func fooWithoutDefer() {
 }
 
 func BenchmarkFooWithDefer(b *testing.B) {
-	for i:=0; i<b.N; i++ {
+	for i := 0; i < b.N; i++ {
 		foowithDefer()
 	}
 }
 
 func BenchmarkFooWithoutDefer(b *testing.B) {
-	for i:=0; i<b.N; i++ {
+	for i := 0; i < b.N; i++ {
 		fooWithoutDefer()
 	}
 }

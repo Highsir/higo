@@ -1,4 +1,4 @@
-package main
+package chapter4
 
 import (
 	"fmt"
@@ -12,6 +12,6 @@ func Max(n int, m int) int {
 	}
 }
 
-func main () {
-	fmt.Printf("%d\n", Max(2,3))
+func main() {
+	fmt.Printf("%d\n", Max(2, 3))
 }

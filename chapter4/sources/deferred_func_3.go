@@ -1,4 +1,4 @@
-package main
+package chapter4
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ func bar() {
 
 func foo() {
 	defer func() {
-		if e := recover(); e != nil{
+		if e := recover(); e != nil {
 			fmt.Println("recovered from a panic")
 		}
 	}()

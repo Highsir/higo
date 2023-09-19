@@ -1,14 +1,14 @@
-package main
+package chapter4
 
 import (
 	"fmt"
 )
 
-func factorial(n int, f func(int)){
-	if n==1{
+func factorial(n int, f func(int)) {
+	if n == 1 {
 		f(n)
-	}else{
-		factorial(n-1, func(y int) {f(n * y)})
+	} else {
+		factorial(n-1, func(y int) { f(n * y) })
 	}
 }
 
