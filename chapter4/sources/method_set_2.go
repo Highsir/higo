@@ -1,4 +1,4 @@
-package main
+package chapter4
 
 type Interface2 interface {
 	M3()
@@ -10,7 +10,7 @@ type T2 struct{}
 func (t T2) M3()  {}
 func (t *T2) M4() {}
 
-func main() {
+func Method_set_2() {
 	var t T2
 	var pt *T2
 	DumpMethodSet(&t)
